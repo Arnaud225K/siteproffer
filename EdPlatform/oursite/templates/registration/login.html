@@ -1,0 +1,64 @@
+{% extends "oursite/index.html" %}
+{% load static %}
+{% block content %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4 col-md-3"></div>
+        <div class="col-lg-4 col-md-6 login-box">
+            <div class="col-lg-12 login-title">
+                <div class="panel">
+                    <h2>Войдите в аккаунт</h2>
+                    <p>Пожалуйста, введите логин и пароль</p>
+                </div>
+            </div>
+
+            <div class="col-lg-12 login-form">
+                <div class="col-lg-12 login-form">
+                    <form method='POST' action="{% url 'login' %}">
+                        {% csrf_token %}
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                <!--<input type="text" class="form-control" name="username" placeholder="Логин...">-->
+                                {{form.username}}
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                <!--<input  type="password" class="form-control" name="password" placeholder="Пароль...">-->
+                                {{form.password}}
+                            </div>
+
+                        <div class="col-lg-12 loginbttm">
+                            <div class="col-lg-12 login-btm login-button">
+                                <button class="btn btn-lg btn-primary btnLogin" type="submit">войти</button>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 loginforgot">
+                            <div class="col-lg-12 forgot">
+                                <a href="#">Забыли пароль?</a>
+                                <a href="{% url 'oursite:register' %}">Еще нет аккаунта?</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+        <div class="col-lg-4 col-md-3"></div>
+    </div>
+
+
+    <script>
+        //Query input fields
+        var form_fields = document.getElementsByTagName('input')
+        form_fields[2].placeholder='Логин...';
+        form_fields[3].placeholder='Пароль...';
+        
+        
+        for (var field in form_fields){	
+        form_fields[field].className += 'form-control'
+        }
+        </script>
+{% endblock %}

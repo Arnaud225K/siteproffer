@@ -1,0 +1,154 @@
+{% extends "oursite/index.html" %}
+{% load static %}
+{% block content %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <link rel="stylesheet" href="{% static 'css/video.css' %}">
+    <script src="{% static 'node_modules/video.js/dist/video.js' %} "></script>
+    <script src="{% static 'node_modules/videojs-playlist/dist/videojs-playlist.js' %}"></script>
+   <link href="https://vjs.zencdn.net/7.17.0/video-js.css" rel="stylesheet" />
+</head>
+<body class="bg">
+<div class="video_center">
+   <div class="buttona">
+<a href="id/playlist" class="buttona_">Стандартный просмотр</a>
+</div>
+    {% for m in Mod %}
+	<video class="video-js" id="video" preload="auto" controls width="762" height=480">
+    {% endfor %}
+<script>
+    var player = videojs('video');
+
+player.playlist([
+
+ {% for m in Mod %}
+ {sources: [{
+    src: '{{m.video.url}}',
+    type: 'video/mp4'
+  }],
+  poster: 'https://avatars.mds.yandex.net/get-zen_doc/3725294/pub_5f5cd52bd709247317a7fd55_5f5cd946d709247317ad7335/scale_1200'
+}, {% endfor %} ])
+
+// Play through the playlist automatically.
+player.playlist.autoadvance(0);
+</script>
+</video>
+</div>
+    <div class="downloadWork">
+        <button class="buttona">
+    <a class="aa" style="text-decoration: none; color: #B08B31" href="{{ Cour.work.url }}" download="">Скачать домашнее задание</a></button>
+    </div>
+
+<div class="homework">
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <p class="_text2">Название:</p> {{ form.title }}
+
+  <div class="videocss">{{ form.homework_file }}</div>
+  <span>{{ error }}</span>
+    <button class="buttona" type="submit">Отправить ДЗ</button>
+</form>
+</div>
+
+
+<style>
+
+.text{
+width: 280px;
+margin-bottom: 20px;
+}
+
+.downloadWork{
+text-align: center;
+}
+
+.buttona{
+
+    height: 50px;
+    color: #9F7100;
+    font-size: 23px;
+    font-weight: 600;
+    background-color: #FFF3E9;
+    border: 2px solid #C79C34;
+    border-radius: 20px;
+    }
+
+.homework{
+width: 762px;
+margin: 0 auto;
+text-align: center;
+
+
+    border-radius: 30px;
+}
+
+  .video_center{
+  width: 762px;
+    height: 569px;
+    position: relative;
+    margin-top: 100px;
+    margin: 0 auto;
+    border-radius: 30px;
+  }
+  .buttona{
+    width: 400px;
+    height: 50px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    color: #9F7100;
+    font-size: 23px;
+    font-weight: 600;
+    background-color: #FFF3E9;
+    border: 2px solid #C79C34;
+    border-radius: 20px;
+    text-align: center;
+    vertical-align: middle;
+    }
+
+    .buttona_{
+vertical-align: middle;
+padding-top: 10px;
+margin-top: 10px;
+color: #9F7100;
+    alink: #9F7100;
+    text-decoration: none;
+    }
+
+    @media screen and (max-width:500px) {
+
+    .buttona{
+    width: 80%;
+    }
+
+    .buttona_{
+    font-size: 18px;
+    }
+
+    .video_center{
+    width: 100%;
+    height: 50%;
+    }
+
+    .video-js{
+    width: 100%;
+    height: 60%;
+    }
+
+    .aa{
+    font-size: 18px;
+    }
+
+    .homework{
+    width: 100%;
+    }
+
+}
+
+</style>
+</body>
+</html>
+{% endblock %}

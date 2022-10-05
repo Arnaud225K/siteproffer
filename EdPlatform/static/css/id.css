@@ -1,0 +1,126 @@
+
+
+
+
+
+
+
+
+.helptext{
+display: none;
+}
+
+
+
+
+
+
+
+
+
+.centerrr{
+    width: 762px;
+
+    position: relative;
+    margin-top: 100px;
+    margin: 0 auto;
+    border-radius: 30px;
+
+}
+
+.auth{
+    position: absolute;
+    margin-top: 40px;
+    margin-left: 202px;
+    color: #FFFFFF;
+    font-size: 30px;
+    font-weight: 550;
+}
+
+.logPassAuth{
+padding-top: 100px !important;
+padding-left: 80px !important;
+
+}
+
+.log-auth{
+    margin-bottom: 20px;
+    color: #FFFFFF;
+    font-size: 30px;
+    font-weight: 550;
+
+}
+
+#id_username{
+height: 65px; width:509px; padding-top: 40px; position: relative; vertical-align: top; margin-bottom: 20px; margin-top: 1px;
+}
+
+.log-img{
+    border-radius: 10px;
+}
+
+
+
+
+label{
+display: none;
+}
+
+.pass-auth{
+position: absolute;
+padding-top: 80px;
+margin-bottom: 20px;
+    color: #FFFFFF;
+    font-size: 30px;
+    font-weight: 550;
+}
+
+#id_password1{
+height: 65px; width:509px; padding-top: 35px; position: relative; vertical-align: top; margin-bottom: 20px; margin-top: 50px; margin-left: 69px;
+}
+
+.pass2-auth{
+position: absolute;
+padding-top: 210px;
+margin-bottom: 20px;
+    color: #FFFFFF;
+    font-size: 30px;
+    font-weight: 550;
+}
+
+#id_password2{
+height: 65px; width:509px; padding-top: 35px; position: relative; vertical-align: top; margin-bottom: 20px; margin-top: 40px; margin-left: 69px;
+}
+
+.inp{
+
+background: #FFD367; border: 3px solid #C79C34; border-radius: 20px; width: 580px; height: 90px; color: #9F7100;
+    font-size: 30px;
+    font-weight: 550;
+}
+
+.razrab{
+text-decoration: underline; color: #FFFFFF; padding-left: 180px; font-size: 25px; padding-bottom: -5px;
+}
+
+
+
+@keyframes spin{
+ from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.video-block{
+
+}
+.video{
+margin:0 auto; position: relative; padding-left: 33%;
+}
+
+.vidos{
+margin:0 auto; position: relative; padding-left: 33%;
+}

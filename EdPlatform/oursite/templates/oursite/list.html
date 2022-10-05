@@ -1,0 +1,120 @@
+{% extends "oursite/index.html" %}
+{% load static %}
+{% block title %}
+    {% if category %}{{ category.name }}{% else %}Products{% endif %}
+{% endblock %}
+{% block content %}
+{% load humanize %}
+
+
+        <div class="sliderContainer">
+            <div id="home-slider" class="wrapper">
+                    <div class="carousel">
+                      <div><a href=""><img src="{% static 'images/slider1.png' %}"></a></div>
+                      <div><a href=""><img src="{% static 'images/slider2.png' %}"></a></div>
+                      <div><a href=""><img src="{% static 'images/slider3.png' %}"></a></div>
+                      <!--<div><img src="https://picsum.photos/300/200?random=3"></div>
+                      <div><img src="https://picsum.photos/300/200?random=4"></div>
+                      <div><img src="https://picsum.photos/300/200?random=5"></div>
+                      <div><img src="https://picsum.photos/300/200?random=6"></div>-->
+                    </div>
+            </div>
+        </div>
+            <section id="tabs">
+                <div class="row">
+                    <div class="col-sm-12 ">
+                        <div class="navTabFlex">
+                         <h4 class="section-title">Смотреть:</h4>
+                        <nav>
+                            <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Товары и Услуги</a>
+                                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Заявки</a>
+                                <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Рекомендации</a>
+                            </div>
+                        </nav>  
+                        </div>
+    
+                        <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                <div class="productContainer">
+                                    <div class="row">
+                                      {% for product in products %}
+                                      <div class="col-lg-3 col-md-6">
+                                              <div class="block product no-border z-depth-2-top z-depth-2-top-hover">
+                                                  <div class="block-image">
+                                                      <a href="{{ product.get_absolute_url }}">
+                                                          <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" class="card-img-top" height="238px">
+
+                                                        </a>
+                                                      <span class="wish-icon"><i class="fa-solid fa-heart"></i></span>
+                                                  </div>
+                                                  <div class="block-body">
+                                                      <h3 class="heading heading-5">{{ product.price.normalize|intcomma }} ₽</h3>
+                                                      <p class="product-description">{{ product.title }}</p>
+                                                  </div>
+                                              </div>
+                                          
+                                        </div>
+                                        {% endfor %}                                    
+                                  </div>  
+                                  </div>
+                                </div>
+                            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                <div class="productContainer">
+                                    <div class="row">
+                                        {% for product in products %}
+                                      <div class="col-lg-3 col-md-6">
+                                              <div class="block product no-border z-depth-2-top z-depth-2--hover">
+                                                  <div class="block-image">
+                                                      <a href="{{ product.get_absolute_url }}">
+                                                          <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" class="card-img-top" height="238px">
+
+                                                        </a>
+                                                      <span class="wish-icon"><i class="fa-solid fa-heart"></i></span>
+                                                  </div>
+                                                  <div class="block-body">
+                                                      <h3 class="heading heading-5">{{ product.price.normalize|intcomma }} ₽</h3>
+                                                      <p class="product-description">{{ product.title }}</p>
+                                                  </div>
+                                              </div>
+                                          
+                                        </div>
+                                        {% endfor %}                                
+                                  </div>  
+                                  </div>                                
+                            </div>
+                            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                <div class="productContainer">
+                                    <div class="row">
+                                        {% for product in products %}
+                                      <div class="col-lg-3 col-md-6">
+                                              <div class="block product no-border z-depth-2-top z-depth-2--hover">
+                                                  <div class="block-image">
+                                                      <a href="{{ product.get_absolute_url }}">
+                                                          <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" class="card-img-top" height="238px">
+
+                                                        </a>
+                                                      <span class="wish-icon"><i class="fa-solid fa-heart"></i></span>
+                                                  </div>
+                                                  <div class="block-body">
+                                                      <h3 class="heading heading-5">{{ product.price.normalize|intcomma }} ₽</h3>
+                                                      <p class="product-description">{{ product.title }}</p>
+                                                  </div>
+                                              </div>
+                                          
+                                        </div>
+                                        {% endfor %}                                    
+                                  </div>  
+                                  </div>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+        </section>  
+
+
+ 
+{% endblock %}
+
+

@@ -1,0 +1,67 @@
+
+
+{% load static %}
+{% load humanize %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<<<<<<< HEAD
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@100&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+        integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+</head>
+=======
+            <div class="chooseCategory">
+            <select onchange="window.location.href = this.options[this.selectedIndex].value">
+                <li {% if not category %}class="selected"{% endif %}>
+                <a href="{% url "oursite:recommendations" %}">All</a>
+            </li>
+                <option value="">Выберите категорию</option>
+
+                <option value="{% url "oursite:recommendations" %}">Все объявления</option>
+            {% for c in categories %}
+                <li {% if category.slug == c.slug %}class="selected"{% endif %}>
+                     <option value="{{ c.get_absolute_url_recommendations }}"><a href="{{ c.get_absolute_url_recommendations }}">{{ c.subj }}</a>
+                    </option>
+                </li>
+            {% endfor %}
+>>>>>>> 7ae4b3cc3425de2acb6047790a91784d87b163c1
+
+<body> 
+    <div class="col-lg-3 col-md-6">
+            <div class="block product no-border z-depth-2-top z-depth-2-top-hover">
+                <div class="block-image">
+                    <a href="{{ product.get_absolute_url }}">
+                        <img src="https://picsum.photos/300/200?random=0" class="card-img-top" height="238px">
+
+                    </a>
+                    <span class="wish-icon"><i class="fa-solid fa-heart"></i></span>
+                </div>
+                <div class="block-body">
+                    <h3 class="heading heading-5">1000 ₽</h3>
+                    <p class="product-description">Jean Blue</p>
+                </div>
+            </div>
+        
+    </div>
+
+<!--Iframe resizer window-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.contentWindow.min.js" integrity="sha512-14SY6teTzhrLWeL55Q4uCyxr6GQOxF3pEoMxo2mBxXwPRikdMtzKMYWy2B5Lqjr6PHHoGOxZgPaxUYKQrSmu0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>
+
+
+

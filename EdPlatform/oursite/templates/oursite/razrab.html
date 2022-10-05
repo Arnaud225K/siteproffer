@@ -1,0 +1,139 @@
+{% extends "oursite/index.html" %}
+{% load static %}
+{% block title %}Checkout{% endblock %}
+
+{% block content %}
+
+    <div class="center">
+        <div class="centerr">
+        <h1 style="color: #FFFFFF; padding-top: 50px;">Стать преподавателем</h1>
+        </div>
+    <form action="." method="post" class="order-form">
+        <h1 class="formm" style="">Название курса: </h1>
+        <div class="polee">
+        <img class="face" src="{% static 'images/loginPic.png' %}" style="">
+        {{ form.title }}
+        </div>
+        <h1 class="formm">Вставьте ссылку на курс: </h1>
+        <div class="polee">
+        <img class="ssill" src="{% static 'images/ssilka.png' %}" style=" ">
+        {{ form.url }}
+        </div>
+        <p><button class="inp" type="submit" style="">Отправить</button></p>
+        {% csrf_token %}
+    </form>
+    </div>
+<style>
+
+    .ssill{
+    width: 65px; position: absolute; vertical-align: top; border-radius: 10px; margin-left: 90px;
+    }
+
+    .face{
+    width: 65px; position: absolute; vertical-align: top; border-radius: 10px; margin-left: 90px;
+    }
+
+    .inp{
+    margin-left: 12%;
+    margin-top: 55px;
+    }
+
+    .center{
+    margin-top: 50px !important;
+    height: 700px !important;
+    }
+
+    .first_name{
+    font-size: 20px;
+    margin-left: 160px;
+    height: 66px;
+    width: 500px;
+    }
+
+    .last_name{
+    font-size: 20px;
+    margin-left: 160px;
+    height: 66px;
+    width: 500px;
+
+    }
+
+    .email{
+    font-size: 20px;
+    margin-left: 160px;
+    height: 66px;
+    width: 500px;
+    }
+
+    .formm{
+    padding-top: 40px;
+    color: #FFFFFF;
+    font-size: 30px;
+    font-weight: 600;
+    padding-left: 12%;
+    }
+
+    .centerr{
+    text-align: center;
+    }
+
+    .center{
+    width: 762px;
+    height: 669px;
+    background: #40A6AD;
+    opacity: .8;
+    position: relative;
+    margin-top: 100px;
+    margin: 100px auto;
+    border-radius: 30px;
+    }
+
+
+    @media screen and (max-width:500px) {
+    .center{
+    width: 100%;
+    }
+
+    .inp{
+    width: 90%;
+    height: 10%;
+    margin-left: 10px;
+    margin-top: 35px;
+    }
+
+    .email{
+    width: 30px;
+    }
+
+    .formm{
+    padding-left: 10px;
+    width: 90%;
+    }
+
+    .face{
+    margin-left: 10px;
+    }
+
+    .last_name{
+    margin-left: 80px;
+    width: 70%;
+    }
+
+    .ssill{
+    margin-left: 10px;
+    }
+
+    .email{
+    margin-left: 80px;
+    width: 70%;
+    }
+
+
+}
+
+</style>
+
+
+
+
+{% endblock %}

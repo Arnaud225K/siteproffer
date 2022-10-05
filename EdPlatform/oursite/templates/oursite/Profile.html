@@ -1,0 +1,96 @@
+{% extends "oursite/index.html" %}
+{% load static %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/profile0.css' %}">
+</head>
+<body class="bg0">
+    <div id="main0" class="product-list0">
+        <div class="headerr0">
+            <div class="products0">Мои объявления</div>
+        </div>
+    </div>
+
+    {% for i in Item %}
+    {% if Item|length == 1 %}
+    <div class="centerr0">
+        <div class="item10" style="position: relative;">
+            <a href="{{ i.product.url_to_course }}">
+                <img class="imgItem1"
+                    src="{% if i.product.image %}{{ i.product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}">
+            </a>
+            <br>
+            <hr class="hrr0">
+            <br>
+            <div class="namee10">
+                <a class="courseName10" href="{{ i.product.url_to_course }}">{{ i.product.title }}</a>
+            </div>
+            <br>
+            <div class="category10">
+                <a class="courseCategory10" href="{{ i.product.category.get_absolute_url }}">{{ i.product.category
+                    }}</a></h2>
+            </div>
+        </div>
+    </div>
+    {% else %}
+
+    <div class="centerr0">
+        <div class="item0" style="position: relative;">
+            <a href="{{ i.product.url_to_course }}">
+                <img class="imgItem0"
+                    src="{% if i.product.image %}{{ i.product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}">
+            </a>
+            <br>
+            <hr>
+            <br>
+            <div class="namee0">
+                <a class="courseName0" href="{{ i.product.url_to_course }}">{{ i.product.title }}</a>
+            </div>
+            <br>
+            <div class="category0">
+                <a class="courseCategory0" href="{{ i.product.category.get_absolute_url }}">{{ i.product.category }}</a>
+                </h2>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+
+    </div>
+    <script>
+        var colorArray = document.getElementsByClassName('category');
+        var color = document.getElementsByClassName('courseCategory');
+        var i = 10;
+        var t = 0;
+        while (t < 10) {
+            if (i == 14) {
+                i = 10
+            }
+            if (i % 10 == 0) {
+                colorArray[t].style.backgroundColor = '#FDE8F2';
+                color[t].style.color = '#FF166A';
+            }
+            else if (i % 11 == 0) {
+                colorArray[t].style.backgroundColor = '#F7ECFF';
+                color[t].style.color = '#FA00FF';
+            }
+
+            else if (i % 12 == 0) {
+                colorArray[t].style.backgroundColor = '#E3F3FF';
+                color[t].style.color = '#618DFF';
+            }
+
+            else {
+                colorArray[t].style.backgroundColor = '#FFF3E9';
+                color[t].style.color = '#DF6B00';
+            }
+            i++
+            t++
+
+        }
+    </script>
+</body>
+</html>
+{% endblock %}

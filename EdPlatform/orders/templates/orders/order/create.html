@@ -1,0 +1,147 @@
+{% extends "oursite/index.html" %}
+{% load static %}
+{% block title %}Checkout{% endblock %}
+
+{% block content %}
+
+
+
+
+    <div class="center">
+        <div class="centerr">
+        <h1 style="color: #FFFFFF; padding-top: 50px;">Ваш заказ</h1>
+
+        <h1 style="color: #FFFFFF">Оплата на сумму: {{ cart.get_total_price }} ₽</h1>
+        </div>
+
+    <form action="." method="post" class="order-form">
+
+
+
+        <h1 class="formm" style="">Введите ФИО: </h1>
+        <div class="polee">
+        <img class="face" src="{% static 'images/loginPic.png' %}" style="">
+        {{ form.last_name }}
+        </div>
+
+
+        <h1 class="formm">Почта: </h1>
+        <div class="polee">
+        <img class="ssill" src="{% static 'images/ssilka.png' %}" style="">
+        {{ form.email }}
+        </div>
+
+        <p><button class="inp" type="submit" style="">Оплатить</button></p>
+        {% csrf_token %}
+    </form>
+    </div>
+
+<style>
+
+    .ssill{
+    width: 65px; position: absolute; vertical-align: top; border-radius: 10px; margin-left: 90px;
+    }
+
+    .face{
+    width: 65px; position: absolute; vertical-align: top; border-radius: 10px; margin-left: 90px;
+    }
+
+    .inp{
+    margin-left: 12%;
+    margin-top: 50px;
+    }
+
+    .center{
+    margin-top: 50px;
+    height: 700px;
+    }
+
+    .first_name{
+    font-size: 20px;
+    margin-left: 160px;
+    height: 66px;
+    width: 500px;
+    }
+
+    .last_name{
+    font-size: 20px;
+    margin-left: 160px;
+    height: 66px;
+    width: 500px;
+
+    }
+
+    .email{
+    font-size: 20px;
+    margin-left: 160px;
+    height: 66px;
+    width: 500px;
+    }
+
+    .formm{
+    padding-top: 20px;
+    color: #FFFFFF;
+    font-size: 30px;
+    font-weight: 600;
+    padding-left: 12%;
+    }
+
+    .centerr{
+    text-align: center;
+
+    }
+
+    .center{
+    width: 762px;
+    height: 669px;
+    background: #40A6AD;
+    opacity: .8;
+    position: relative;
+    margin-top: 100px;
+    margin: 100px auto;
+    border-radius: 30px;
+    }
+
+    @media screen and (max-width:500px) {
+    .center{
+    width: 100%;
+    }
+
+    .ssill{
+    margin-left: 10px;
+    }
+
+    .face{
+    margin-left: 10px;
+    }
+
+    .formm{
+    padding-left: 10px;
+    width: 90%;
+    }
+
+    .email{
+    margin-left: 80px;
+    width: 70%;
+    }
+
+    .last_name{
+    margin-left: 80px;
+    width: 70%;
+    }
+
+    .inp{
+    width: 90%;
+    height: 10%;
+    margin-left: 10px;
+    margin-top: 30px;
+    }
+}
+
+</style>
+{% endblock %}
+
+
+
+
+</html>

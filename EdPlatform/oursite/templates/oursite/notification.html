@@ -1,0 +1,731 @@
+{% extends "oursite/index.html" %}
+{% load static %}
+<<<<<<< HEAD
+{% block content %}
+{% load humanize %}
+    <div class="container">
+        <div class="profile">
+            <div class="col-md-3">
+                <div class="profile-sidebar">
+                    <div class="profile-usertitle">
+                        <div class="profile-usertitle-name">
+                            {{ user.first_name }} {{ user.last_name.0 }}
+                        </div>
+                    </div>
+                    <div class="profile-userpic">
+                        <img src="{{ image.image.url }}" class="img-responsive" alt="">
+                    </div>
+                    <div class="profile-usermenu">
+                        <ul class="nav">
+                            <li><a class="dropdown-item" href="{% url 'oursite:profilee' %}">&nbsp;&nbsp;<i class="fa-solid fa-scroll"></i>&nbsp;&nbsp;Мои объявления</a></li>
+                            <li><a class="dropdown-item" href="{% url 'oursite:profile_buying' %}">&nbsp;&nbsp;<i class="fa-solid fa-file-image"></i>&nbsp;&nbsp;Мои заказы</a></li>
+                            <li><a class="dropdown-item" href="{% url 'cart:cart_detail' %}">&nbsp;&nbsp;<i class="fa-solid fa-bookmark"></i>&nbsp;&nbsp;Избранное</a></li>
+                            <li class="active"><a class="dropdown-item" href="{% url 'oursite:dialogs' %}">&nbsp;&nbsp;<i class="fa-regular fa-comment"></i>&nbsp;&nbsp;Сообщения</a></li>
+                            <li><a class="dropdown-item" href="{% url 'oursite:notifications' %}">&nbsp;&nbsp;<i class="fa-regular fa-bell"></i>&nbsp;&nbsp;Уведомления</a></li>
+                            <li><a class="dropdown-item" href="{% url 'oursite:profile_manage' %}">&nbsp;&nbsp;<i class="fa-regular fa-id-card"></i>&nbsp;&nbsp;Профиль</a></li>
+                            <li><a class="dropdown-item" href="">&nbsp;&nbsp;<i class="fa-solid fa-gear"></i>&nbsp;&nbsp;Настройки</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="profile-content">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="card panel panel-default chat-widget">
+                        <div class="card-header">
+                                <div class="inbox_chat_top">
+                                    <div class="chat_list active_chat">
+                                    <div class="chat_people_img">
+                                        <span class="chat_back"><a href="{% url 'oursite:notifications' %}"><i class="fa fa-arrow-left" style="font-size:24px"></i></a></span>
+                                        <div class="chat_img"><img src="{% static 'images/profferLogo.png' %}" width="68px" height="68px" alt="sunil"></div>
+                                        <div class="chat_people">
+                                            <div class="name_person"><h5>Поддержка Proffer</h5></div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="card-body">
+                            <span class="alert_content">
+                                {% if nots.image %}
+                                <span class="alert_content_img"></span><img src="{{ nots.image.url }}" alt="" height="90px" width="120px">
+                                {% endif %}
+                                <span class="alert_content_title"><h6>{{ nots.title }} </h6></span>
+                                <span class="alert_content_text"><p>{{ nots.overview }}</p></span>
+                            </span>
+                        </div>
+                          <!--<div class="card-footer">
+                            <h3>Ok</h3>
+                          </div>-->
+                      </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>-->
+{% endblock %}
+
+
+<!--
+=======
+
+{% block content %}
+{% load humanize %}
+>>>>>>> 7ae4b3cc3425de2acb6047790a91784d87b163c1
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+</head>
+<body class="bg">
+
+<div class="block">
+
+    <div class="settings">
+        <div style="text-align: center">
+            <p class="username">{{ user.first_name }} {{ user.last_name.0 }}.</p>
+        </div>
+
+
+        <img class="profile_pic" src="{{ image.image.url }}" alt="" height="160px" style="margin-left: 75px;">
+        <a href="{% url "oursite:profilee" %}"><p class="side-menu">Мои объявления</p></a>
+        <a href="{% url "oursite:profile_buying" %}"><p class="side-menu">Мои заказы</p></a>
+        <a href="{% url "cart:cart_detail" %}"> <p class="side-menu">Избранное</p></a>
+        <a href="{% url "oursite:dialogs" %}"> <p class="side-menu">Мои сообщения</p></a>
+        <a href="{% url "oursite:notifications" %}"><p class="side-menu-chosen">Уведомления</p></a>
+        <a href="{% url "oursite:profile_manage" %}"><p class="side-menu">Управление профилем</p></a>
+        <p class="side-menu">Настройки</p>
+
+    </div>
+
+    <div id="main" class="product-list">
+        <div class="headerr">
+            <p class="products">Мои уведомления</p>
+        </div>
+
+        <div class="all-items">
+
+
+            <div class="head">
+                    <div class="picture">
+                        <a href="{% url "oursite:notifications" %}"><img class="arrow" src="{% static 'images/arrow.png' %}" alt="" width="30px"></a>
+                        <img class="logo" src="{% static 'images/profferLogo.png' %}" alt="" width="70px">
+                        <p class="textHead">Уведомление Proffer</p>
+                    </div>
+            </div>
+            <div class="notification">
+                <div class="text">
+                    {% if nots.image %}
+                    <img class="notImage" src="{{ nots.image.url }}" alt="" height="250">
+                    {% else %}
+                    {% endif %}
+                    <h3>{{ nots.title }}</h3>
+                    <p style="font-weight: 450">{{ nots.overview }}</p>
+                    <a href="{{ nots.url }}" style="font-weight: 800; color: #0A8484">Узнать больше!</a>
+                </div>
+            </div>
+        </a>
+
+        </div>
+    </div>
+
+</div>
+
+
+<script type="text/javascript" src={% static "js/price.js" %}></script>
+<script> doprice() </script>
+
+<script>
+
+
+    var colorArray = document.getElementsByClassName('category');
+    var color = document.getElementsByClassName('courseCategory');
+    var i = 10;
+    var t = 0;
+    while (t < 10){
+    if (i == 14){
+    i = 10
+    }
+    if (i % 10 == 0){
+    colorArray[t].style.backgroundColor = '#FDE8F2';
+    color[t].style.color = '#FF166A';
+    }
+    else if (i % 11 == 0){
+    colorArray[t].style.backgroundColor = '#F7ECFF';
+    color[t].style.color = '#FA00FF';
+    }
+
+    else if (i % 12 == 0){
+    colorArray[t].style.backgroundColor = '#E3F3FF';
+    color[t].style.color = '#618DFF';
+    }
+
+    else{
+    colorArray[t].style.backgroundColor = '#FFF3E9';
+    color[t].style.color = '#DF6B00';
+    }
+    i++
+    t++
+
+    }
+
+</script>
+
+<style>
+
+    .text{
+    margin-left: 50px;
+
+    }
+
+
+
+    .textHead{
+    font-weight: 450;
+    font-size: 24px;
+    padding-top: 1.8em;
+    margin-left: 200px;
+    }
+
+    .head{
+    width: 900px;
+    height: 120px;
+    background: #FFF;
+
+    position: relative;
+    text-align: left;
+    margin-left: 170px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: -45px;
+    z-index: 100;
+    }
+
+    .notification{
+    width: 900px;
+    height: 560px;
+    background: #FFF;
+    opacity: .8;
+    position: relative;
+    margin-left: 170px;
+    border-radius: 0 0 30px 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .notImage{
+    margin-top: 70px;
+    margin-left: 145px;
+    margin-bottom: 40px;
+    }
+    .logo{
+    margin-left: 30px;
+    float: left;
+    padding-top: 1.5em;
+    }
+
+    .arrow{
+    margin-left: 40px;
+    float: left;
+    padding-top: 2.7em;
+    }
+
+    .products{
+    font-size: 28px;
+    font-weight: 450;
+    }
+
+    .all-items{
+    margin-left: 10px;
+    margin-top: 30px;
+    }
+
+    .side-menu{
+    margin-left: 50px;
+    font-size: 24px;
+    font-weight: 450;
+    }
+
+    .side-menu-chosen{
+    margin-left: 50px;
+    font-size: 24px;
+    font-weight: 450;
+    color: #00B2B2;
+    }
+
+    .username{
+    font-size: 26px;
+    font-weight: 650;
+    }
+
+    .settings{
+    width: 309px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    background-color: #FFF;
+    }
+
+    .product1{
+    text-align: left;
+    width: 1000px;
+
+    position: relative;
+    margin: 20px auto;
+    margin-top: 10px;
+
+    margin-bottom: 27px;
+    }
+
+    a{
+    color: black;
+    }
+
+    .product{
+    margin-right: 200px;
+    width: 500px;
+    font-size: 24px;
+    margin-top: 27px;
+    font-weight: 450;
+    border-bottom: 4px solid #00D5D5;
+    }
+
+    .product-not{
+    margin-right: 200px;
+    width: 500px;
+    font-size: 24px;
+    margin-top: 27px;
+    color: #777C7D;
+    font-weight: 450;
+    }
+
+
+
+
+
+    .block{
+    margin-top: 50px;
+    margin-left: 5%;
+    width: 90%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: 0.5fr 80%;
+    }
+
+
+    .namee{
+    margin-left: 20px;
+    width: 210px;
+    word-break: break-all;
+    text-align: left;
+    }
+
+    .priceDiv{
+    width: 210px;
+    margin-left: 20px;
+    word-break: break-all;
+    text-align: left;
+    }
+
+    .price{
+    font-size: 28px;
+    font-weight: 800;
+    color: #182128;
+    margin: 0;
+    margin-top: 20px;
+    }
+
+    a{
+    text-decoration: none;
+    }
+
+    .hrr{
+    width: 440px;
+    }
+
+
+
+    .category{
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 30px;
+    background-color: #E3F3FF;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+    .courseCategory{
+    font-size: 24px;
+    text-decoration: none;
+    color: #618DFF;
+    font-weight: 600;
+    }
+
+
+
+    .courseName{
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+    font-weight: 600;
+    }
+
+    .headerr{
+    text-align: center;
+    width: 762px;
+
+    opacity: .8;
+    position: relative;
+    margin: 20px auto;
+    margin-top: 10px;
+
+    }
+
+    .imgItem{
+    width: 250px;
+    height: 220px;
+    background: #FFFFFF;
+    border-radius: 10px 10px 0 0;
+    }
+
+    .product-list{
+    width: 100%;
+    position: relative;
+    margin: 20px auto;
+    margin-top: 10px;
+    border-radius: 30px;
+    border: 2px solid transparent;
+    }
+
+
+    .item{
+    border-radius: 10px;
+    margin-right: auto;
+     float: left;
+     background: #FFFFFF;
+     background-color: #FFFFFF;
+     width: 250px;
+     height: 340px;
+     margin-right: 50px;
+     text-align: center;
+     margin-bottom: 55px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+
+    .centerr{
+    width: 1500px;
+
+    position: relative;
+    margin: auto;
+
+    display: block;
+    }
+
+    @media screen and (max-width:1500px) {
+    .centerr{
+    width: 600px;
+    position: relative;
+    margin: auto;
+    border-radius: 30px;
+
+    }
+
+    .item{
+    margin-left: 55;
+    }
+}
+
+    .textt{
+    font-size: 20px;
+    font-weight: 600;
+    padding-left: 5%;
+
+    }
+
+    .overview{
+    font-size: 20px;
+    margin-left: 160px;
+    height: 60px;
+    width: 300px;
+
+    }
+
+    .titlee{
+    position: absolute;
+    top: 100px;
+    margin-left: 3%;
+
+    }
+
+    .title{
+    font-size: 20px;
+    margin-left: 160px;
+    height: 30px;
+    width: 300px;
+    }
+
+    .buttona{
+    width: 300px;
+    height: 50px;
+    margin-top: 30px;
+    margin-left: 40px;
+    color: #9F7100;
+    font-size: 23px;
+    font-weight: 600;
+    background-color: #FFF3E9;
+    border: 2px solid #C79C34;
+    border-radius: 20px;
+    }
+
+    .upload_image{
+    width: 180px;
+    position: absolute; pointer-events: none;
+    padding-left: 535px;
+    padding-top: 60px;
+    }
+
+    .imagecss{
+    width: 180px;
+    position: absolute;
+    padding-left: 535px;
+    padding-top: 60px;
+    }
+    .imagecss input[type=file] {
+    position: absolute;
+    background-color: #000000;
+     width: 180px;
+     height: 180px;
+     opacity: 0;
+    padding-top: -100px;
+
+
+</style>
+<style>
+.upload_video{
+width: 60px;
+position: absolute; pointer-events: none;
+padding-left: 250;
+}
+
+    .homework{
+    display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     width: 60px;
+     height: 60px;
+     margin-top: -65px;
+     padding-left: 390;
+    }
+
+     .homework input[type=file] {
+     width: 60px;
+     height: 60px;
+     opacity: 0;
+     position: absolute;
+}
+
+    .videocss{
+    display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     width: 60px;
+     height: 60px;
+     padding-left: 250;
+    }
+    .videocss input[type=file] {
+     width: 60px;
+     height: 60px;
+     opacity: 0;
+     position: absolute;
+
+}
+
+
+@media screen and (max-width:500px) {
+    .center{
+    width: 100%;
+    height: 800px;
+    }
+
+    .centerr1{
+    width: 100%;
+    height: 800px;
+    }
+
+    .buttona{
+    margin-top: 140px;
+    margin-left: 10px;
+    }
+
+    ._text3{
+    top: 620px;
+    padding-left: 20px;
+    }
+
+    .upload_image{
+    padding-left: 180px;
+    padding-top: 470px;
+    width: 100px;
+    }
+
+    .imagecss{
+    width: 80px;
+    margin-top: 450px;
+    left: 0;
+    margin-left: 180px;
+    }
+
+    .imagecss input[type=file] {
+    position: absolute;
+    background-color: #000000;
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+    padding-top: 0px;
+}
+
+    ._text2{
+    padding-left: 20px;
+
+    }
+
+    .upload_homework{
+    padding-left: 150px;
+    padding-top: 50px;
+    }
+
+    #id_work{
+    left: 150px;
+    margin-top: 50px;
+    }
+
+    #open-popup-1{
+    margin-left: 280px;
+    width: 30px;
+    height: 30px;
+    }
+
+    #popup-1{
+    margin-left: 20px;
+    width: 300px;
+    }
+
+    .popup-content{
+    width: 200px;
+    }
+
+    .addCategory{
+    margin-left: -10px;
+    margin-top: -6px;
+    }
+
+
+
+    .chooseCategory{
+    margin-left: 180px;
+    }
+
+    .product-list{
+    width: 100%;
+    }
+
+    .headerr{
+    width:93%;
+    }
+
+    .centerr{
+    width: 100%;
+    }
+
+    .item{
+    width: 90%;
+    margin-left: 6px;
+    height: 240px;
+    margin-right: 0px;
+    }
+
+    .item1{
+    width: 90%;
+    margin-left: 6px;
+    height: 240px;
+    margin-right: 0px;
+    }
+
+    .imgItem{
+    width: 80%;
+    height: 45%;
+    }
+    .imgItem1{
+    width: 80%;
+    height: 45%;
+    }
+
+    .hrr{
+
+    width: 95%;
+    }
+
+    .courseName{
+    font-size: 24px;
+    }
+
+    .courseName1{
+    font-size: 24px;
+    }
+
+    .category{
+    margin-top: -20px;
+
+    }
+
+    .courseCategory{
+    font-size: 18px;
+
+    }
+
+    .priceDiv{
+
+    margin-top: -60px;
+    }
+
+    .namee{
+
+    margin-bottom: 15px;
+    }
+
+    ._text{
+    padding-left: 25px;
+    }
+
+    .padd{
+    margin-left: 90px;
+    }
+
+    .price{
+    font-size: 18px;
+    }
+}
+</style>
+
+
+
+
+</body>
+
+
+</body>
+<<<<<<< HEAD
+</html>-->
+=======
+{% endblock %}
+</html>
+>>>>>>> 7ae4b3cc3425de2acb6047790a91784d87b163c1
