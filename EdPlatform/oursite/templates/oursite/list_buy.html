@@ -5,7 +5,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<<<<<<< HEAD
 <head>
 
     <meta charset="utf-8">
@@ -20,27 +19,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
         integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
-=======
-        <div class="headerr">
-        <h1 class="products">{% if category %}{{ category.subj }}{% else %}Все объявления{% endif %}</h1>
-            <a href="{% url "oursite:product_list" %}">Товары и услуги</a>
-            <a href="{% url "oursite:buy" %}">Заявки</a>
-            <a href="{% url "oursite:recommendations" %}">Рекомендации</a>
-            <div class="chooseCategory">
-            <select onchange="window.location.href = this.options[this.selectedIndex].value">
-                <li {% if not category %}class="selected"{% endif %}>
-                <a href="{% url "oursite:product_list_buy" %}">All</a>
-            </li>
-                <option value="">Выберите категорию</option>
-
-                <option value="{% url "oursite:product_list_buy" %}">Все объявления</option>
-            {% for c in categories %}
-                <li {% if category.slug == c.slug %}class="selected"{% endif %}>
-                     <option value="{{ c.get_absolute_url_buy }}"><a href="{{ c.get_absolute_url_buy }}">{{ c.subj }}</a>
-                    </option>
-                </li>
-            {% endfor %}
->>>>>>> 7ae4b3cc3425de2acb6047790a91784d87b163c1
 
     <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
 </head>

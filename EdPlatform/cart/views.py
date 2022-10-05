@@ -36,11 +36,8 @@ def cart_remove(request, product_id):
     return redirect('cart:cart_detail')
 
 @login_required(login_url='/register')
-<<<<<<< HEAD
 @xframe_options_sameorigin
 
-=======
->>>>>>> 7ae4b3cc3425de2acb6047790a91784d87b163c1
 def cart_detail(request):
     image = ImageForUser.objects.get(user=request.user)
     user = User.objects.get(username=request.user)

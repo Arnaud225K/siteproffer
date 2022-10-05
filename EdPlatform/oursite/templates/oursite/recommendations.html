@@ -7,7 +7,6 @@
 
 <head>
 
-<<<<<<< HEAD
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -23,22 +22,6 @@
 
     <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
 </head>
-=======
-            <div class="chooseCategory">
-            <select onchange="window.location.href = this.options[this.selectedIndex].value">
-                <li {% if not category %}class="selected"{% endif %}>
-                <a href="{% url "oursite:recommendations" %}">All</a>
-            </li>
-                <option value="">Выберите категорию</option>
-
-                <option value="{% url "oursite:recommendations" %}">Все объявления</option>
-            {% for c in categories %}
-                <li {% if category.slug == c.slug %}class="selected"{% endif %}>
-                     <option value="{{ c.get_absolute_url_recommendations }}"><a href="{{ c.get_absolute_url_recommendations }}">{{ c.subj }}</a>
-                    </option>
-                </li>
-            {% endfor %}
->>>>>>> 7ae4b3cc3425de2acb6047790a91784d87b163c1
 
 <body> 
     <div class="col-lg-3 col-md-6">

@@ -7,7 +7,6 @@
 {% load humanize %}
 <!--<div class="headerr">
         <h1 class="products">{% if category %}{{ category.title }}{% else %}Объявление{% endif %}</h1>
-<<<<<<< HEAD
 </div>-->
 <div class="currentLinkContainer">
     <div class="row">
@@ -19,57 +18,10 @@
                     <li class="breadcrumb-item active" aria-current="page">Product</li>
                 </ol>
             </nav>
-=======
-</div>
-    <div class="product-detail">
-        {% if neededUser != request.user %}
-        <div>
-            <form class="s" method="get" style="display: inline; padding-bottom: 20px; margin-right: 30px;">
-                <input class="s" name="q" type="submit" value="Написать продавцу">
-            </form>
         </div>
-        {% endif %}
-        <div class="titleee">
-
-        <a class="courseCategory" href="{{ product.url_to_catalog }}">
-            <h1 class="h11">{{ first_name|title }} {{ last_name.0|title }}. ({{ catalog|length }} объявлений)</h1>
-        </a>
-
-        </div>
-        <div class="titlee">
-        <h1 class="h11">{{ product.title }}</h1>
-        </div>
-        <img id="imgItemSrc" class="imgItem" src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
-         <div class="addd" id="parent">
-                <button id="up"></button>
-                <ul>
-                <li><button id="product-{{product.id}}" onclick="reply_click(1{{product.id}})"><img id="productImage-{{product.id}}" width="90px;" src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}"></button></li>
-                {% for photo in module %}
-                <li><button id="side-{{photo.id}}" onclick="reply_click(2{{photo.id}})" ><img id="sideImage-{{photo.id}}" width="90px;" src="{% if photo.video %}{{ photo.video.url }}{% else %}{% static "img/no_image.png" %}{% endif %}"></button></li>
-                {% endfor %}
-                </ul>
-                <button id="down"></button>
-            </div>
-        <img class="courseBack" src="{% static 'images/courseBack.jpg' %}" alt="">
-
-
-
-
-        <div class="category">
-        <a class="courseCategory" href="{{ product.category.get_absolute_url }}">{{ product.category }}</a>
-        </div>
-        <div class="overvieww">
-        <h1 class="h12">{{ product.overview }}</h1>
-            <h1 class="h12">{{ product.number }}</h1>
->>>>>>> 7ae4b3cc3425de2acb6047790a91784d87b163c1
-        </div>
-
-
-
     </div>
 </div>
 
-<<<<<<< HEAD
 <div class="detailContainer">
     <div class="card">
         <div class="row">
@@ -170,52 +122,7 @@
             </div>
         </div>
     </div>
-=======
-<script>
->>>>>>> 7ae4b3cc3425de2acb6047790a91784d87b163c1
 
-var upBtn = document.querySelector('#up');
-var downBtn = document.querySelector('#down');
-
-upBtn.addEventListener('click', slide);
-downBtn.addEventListener('click', slide);
-
-function slide(e) {
-  e.target.id === 'down' ? scroll(100) : scroll(-100);
-}
-
-function scroll(val) {
-  document.querySelector('ul').scrollBy({
-    top: val,
-    behavior: 'smooth'
-  });
-}
-
-function reply_click(clicked_id){
-    strId = clicked_id.toString()
-    var chosenNumber = strId[0];
-    var id = strId.substr(1)
-    var search = "sideImage-" + id;
-    if (chosenNumber == 1){
-        var search = "productImage-" + id;
-    }
-    src = document.getElementById(search).src;
-    document.getElementById("imgItemSrc").src=src;
-  }
-
-
-    var popup1 = document.getElementById("popup-1");
-    var openPopup1 = document.getElementById("open-popup-1");
-    var closePopup1 = document.getElementById('close-popup-1');
-
-openPopup1.addEventListener('click', () => {
-	popup1.style.display = "block";
-})
-
-closePopup1.addEventListener('click', () => {
-	popup1.style.display = "none";
-})
-</script>
 
 </div>
 
@@ -253,79 +160,10 @@ closePopup1.addEventListener('click', () => {
 
                 <div class="modal-body mb-0 p-0">
 
-<<<<<<< HEAD
                     <div class="imgs-zoom">
                         <img class="img-fluid" id="modalImgageViewIMG"
                             src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" />
                     </div>
-=======
-.addd {
-margin-right: 0;
-  height: 100%;
-  width: 200px;
-  display: grid;
-  grid-gap: 5rem;
-  grid-template-columns: 50px;
-  grid-template-rows: 60px 1fr 60px;
-}
-
-ul {
-width: 120px;
-  height: 100%;
-  display: grid;
-  grid-gap: 3rem;
-  grid-template-rows: repeat(20, 100px);
-  list-style: none;
-  overflow: hidden;
-  scroll-snap-type: y mandatory;
-}
-
-li {
-  scroll-snap-align: center;
-}
-
-#up{
-background-color: #212121;
-  border: none;
-  cursor: pointer;
-  clip-path: polygon(0 0, 100% 50%, 0 100%);
-  transform: rotate(-90deg);
-}
-
-#down{
-clip-path: polygon(100% 0, 0 50%, 100% 100%);
-transform: rotate(270deg);
-background-color: #212121;
-  border: none;
-  cursor: pointer;
-}
-
-#open-popup-1{
-    border: 1px solid;
-    border-radius: 10px;
-    height: 90px;
-    width: 90px;
-    }
-
-#popup-1 {
-    z-index: 9;
-	display: none;
-	background-color: rgba(0,0,0,0.5);
-	position: absolute;
-	height: 295px;
-	width: 450px;
-}
-
-.formCart{
-    width: 99%;
-    position: absolute;
-    top: 400px;
-    margin-left: -14%;
-    font-size: 35px;
-    text-align: center;
-    margin-top: 1px;
-    }
->>>>>>> 7ae4b3cc3425de2acb6047790a91784d87b163c1
 
                 </div>
 

@@ -28,13 +28,10 @@ from .forms import CheckForm
 from pytils.translit import slugify
 from . import forms
 from django.db.models import Q, Count
-<<<<<<< HEAD
 
 #import to use iframe
 from django.views.decorators.clickjacking import xframe_options_deny
 from django.views.decorators.clickjacking import xframe_options_sameorigin
-=======
->>>>>>> 7ae4b3cc3425de2acb6047790a91784d87b163c1
 
 
 # Create your views here.
@@ -119,10 +116,7 @@ def courses(request):
 
 
 @login_required(login_url='/register')
-<<<<<<< HEAD
 @xframe_options_sameorigin
-=======
->>>>>>> 7ae4b3cc3425de2acb6047790a91784d87b163c1
 
 def profilee(request, category_slug=None):
     category = None
@@ -168,10 +162,7 @@ def profile_archive(request, category_slug=None):
                    })
 
 @login_required(login_url='/register')
-<<<<<<< HEAD
 @xframe_options_sameorigin
-=======
->>>>>>> 7ae4b3cc3425de2acb6047790a91784d87b163c1
 
 def profile_buying(request, category_slug=None):
     category = None
@@ -229,11 +220,8 @@ def profile_manage(request, category_slug=None):
         user.last_name = request.POST.get('last_name')
         user.email = request.POST.get('email')
         user.save()
-<<<<<<< HEAD
         print(image.first())
         #if image.first() == None:
-=======
->>>>>>> 7ae4b3cc3425de2acb6047790a91784d87b163c1
         if not image:
             print('1')
             if form.is_valid():
@@ -543,10 +531,7 @@ def product_list(request, category_slug=None):
                    'products': products,
                    'cart_product_form': cart_product_form})
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 7ae4b3cc3425de2acb6047790a91784d87b163c1
 def product_list_buy(request, category_slug=None):
     category = None
     categories = Subject.objects.all()
@@ -663,10 +648,7 @@ def product_detail(request, id, slug):
     module = Module.objects.filter(course=product)
     cart_product_form = CartAddProductForm()
     neededUser = product.owner
-<<<<<<< HEAD
     print(neededUser)
-=======
->>>>>>> 7ae4b3cc3425de2acb6047790a91784d87b163c1
     user_id = neededUser.id
     first_name = neededUser.first_name
     last_name = neededUser.last_name
