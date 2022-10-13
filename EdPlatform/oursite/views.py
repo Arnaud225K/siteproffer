@@ -37,7 +37,7 @@ from django.views.decorators.clickjacking import xframe_options_sameorigin
 # Create your views here.
 def Search(request):
     query = request.GET.get('q')
-    object_list = Course.objects.filter(title__iregex=query)
+    object_list = Course.objects.filter(title__iregex=query, available=True)
     cart_product_form = CartAddProductForm()
     type1 = ""
     type2 = ""

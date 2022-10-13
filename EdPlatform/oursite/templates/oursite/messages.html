@@ -30,7 +30,7 @@
             <div class="col-md-9">
                 <div class="profile-content">
                     <div class="col-lg-12 col-md-12">
-                        <div class="card panel panel-default chat-widget">
+                    <div class="card panel panel-default chat-widget">
                         <div class="card-header">
                                 <div class="inbox_chat_top">
                                     <div class="chat_list active_chat">
@@ -45,76 +45,35 @@
                                 </div>
                         </div>
                         <div class="card-body msg_card_body">
-                          <div class="message">
-                              <div class="avatar">
-                              <img class="img-circle avatar" alt="chat avatar" src="{% static 'images/imgprofil.png' %}">
-                              </div>
-                              <div class="message-text-wrapper">
-                                <div class="message-text">
-                                    <p>Basic panel example awesome one bewsom Basic panel example awesome Basic panel example awesome one bewsom Basic panel example awesome 
-                                        Basic panel example awesome one bewsom Basic panel example awesome 
-                                     </p>
-                                  
-                                </div>
-                              </div>
-                              <p class="time-stamp"><i class="fa fa-check"></i> Вчера 12:40</p>
-                          </div>
-                    
-                          <div class="message message-right">
-                              <div class="avatar">
-                              <img class="img-circle avatar" width="68px" height="68px" alt="chat avatar" src="https://bootdey.com/img/Content/avatar/avatar2.png">
-                              </div>
-                              <div class="message-text-wrapper">
-                                <div class="message-text">
-                                    <p>Basic panel example awesome one bewsom Basic panel example awesome</p>
-                                  
-                                </div>
-                              </div>
-                              <p class="time-stamp"><i class="fa fa-check"></i> Вчера 12:42</p>
-                          </div>
-                          <div class="message">
-                            <div class="avatar">
-                            <img class="img-circle avatar" width="68px" height="68px" alt="chat avatar" src="{% static 'images/imgprofil.png' %}">
-                            </div>
-                            <div class="message-text-wrapper">
-                              <div class="message-text">
-                                <p>Basic panel example awesome one bewsom Basic panel example awesome</p>
-                                
-                              </div>
-                            </div>
-                            <p class="time-stamp"><i class="fa fa-check"></i> Вчера 12:50</p>
+                            {% for message in chat.message_set.all %}
+                            {% include 'oursite/message.html' with message_item=message %}
+                            {% endfor %}
                         </div>
-                  
-                        <div class="message message-right">
-                            <div class="avatar">
-                            <img class="img-circle avatar" alt="chat avatar" src="https://bootdey.com/img/Content/avatar/avatar2.png">
-                            </div>
-                            <div class="message-text-wrapper">
-                              <div class="message-text">
-                                <p>Basic panel example awesome one bewsom Basic panel example awesome</p>
-                              </div>
-                            </div>
-                            <p class="time-stamp"><i class="fa fa-check"></i> 2 minute ago</p>
-                        </div>
-                          </div>
 
                           <div class="card-footer">
-                            <div class="input-group">
-                            <button class="btn btn-primary btn-sm">
-                                <i class="fas fa-paperclip"></i>
-                            </button>
-                            <button class="btn btn-primary btn-sm">
-                                <i class="fa fa-camera"></i>
-                            </button>
-                            <input type="text" placeholder="Написать сообщение" class="form-control primary">
-                            <span class="input-group-btn">
-                                <button class="btn btn-primary btn-sm" type="button"><i class="fas fa-location-arrow"></i></button>
-                            </span>
-                          </div>
+                                <div class="input-group">
+                                    <form id="message-form" class="form-control" method="post" >
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-primary btn-sm">
+                                                <i class="fas fa-paperclip"></i>
+                                            </button>
+                                            <button class="btn btn-primary btn-sm">
+                                                <i class="fa fa-camera"></i>
+                                            </button>
+                                        </span>
+
+                                        {% load bootstrap4 %}
+                                        {% csrf_token %}
+                                        {% bootstrap_form form %}
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-primary btn-sm" onclick="return ETextEditor.validateForm('message-form')" type="submit"><i class="fas fa-location-arrow"></i></button>
+                                        </span>
+                                    </form>
+                                </div>
                           </div>
                       </div>
                     </div>
-                    
+                </div>
                 </div>
             </div>
         </div>
@@ -122,5 +81,5 @@
 
 </body>
 
-</html>-->
+</html>
 {% endblock %}

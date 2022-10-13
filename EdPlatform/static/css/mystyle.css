@@ -1759,6 +1759,10 @@ a>.block-profile{
     color: #80888F;
 }
 
+.chat-widget .card-footer .form-control .primary {
+    background-color: rgba(0, 0, 0, 0.08) !important;
+}
+
 .chat-widget .card-footer .btn-sm {
     font-size: 25px;
     background-color: transparent;

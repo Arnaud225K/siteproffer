@@ -1,3 +1,4 @@
+from tkinter import Label, Widget
 from .models import Video, UrlCheck, Course, Module, Constructor, VideoForConstructor, Subject, Message, Chat, ImageForUser
 from django.forms import ModelForm, TextInput, Textarea, FileField
 from django import forms
@@ -100,6 +101,17 @@ class MessageForm(ModelForm):
         model = Message
         fields = ['message']
         labels = {'message': ""}
+
+        widgets = {
+            'message': Textarea(attrs={
+                'class': 'form-control primary',
+                'cols':'60',
+                'rows':'3',
+                'placeholder':'Написать сообщение',
+                'style':'width:100%'
+            }),
+        }
+       
 
 class ImageForm(forms.ModelForm):
     class Meta:
