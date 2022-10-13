@@ -649,11 +649,14 @@ a>.block {
 
 /*Product detail style*/
 .currentLinkContainer {
-    width: 100%;
     padding-top: 60px;
-    padding-right: 40px;
-    padding-left: 40px;
-    margin-bottom: 20px;
+}
+
+.detail-card {
+    background: #FFFFFF;
+    /*border: 1px solid rgba(0,0,0,.125);*/
+    box-shadow: 3px 3px 8px rgb(0 0 0 / 8%), -3px -3px 8px rgb(0 0 0 / 8%);
+    border-radius: 10px;
 }
 
 .detailContainer {
@@ -675,6 +678,7 @@ a>.block {
 
 .currentLinkContainer .breadcrumb {
     background-color: transparent;
+    padding-left: 0px !important;
 }
 
 
@@ -708,7 +712,7 @@ a>.block {
     display: flex;
     align-items: start;
     flex-direction: column;
-    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .gallery-wrap .img-small-wrap img {
@@ -819,8 +823,6 @@ a>.block {
 .card-similar {
     width: 100%;
     padding-top: 40px;
-    padding-right: 40px;
-    padding-left: 40px;
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
@@ -908,7 +910,7 @@ a>.block-similar {
 
 
 .block-similar-body .productdes {
-    padding: 5px;
+    padding: 3px;
     font-style: normal;
     font-weight: 500;
     font-size: 22px;
@@ -2001,4 +2003,174 @@ a>.block-profile{
 
 .block-profil-admin .card-header h5 {
     margin-bottom: 0px !important;
+}
+
+/* Style for Search Result Proffer */
+.listings .search-bloc-result {
+    padding-bottom: 30px;
+}
+.listings .search-found {
+    font-size: 24px;
+    color: #000000;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+.listings .card-sidebar {
+    background: #FFFFFF;
+    /*border: 1px solid rgba(0,0,0,.125);*/
+    box-shadow: 3px 3px 8px rgb(0 0 0 / 8%), -3px -3px 8px rgb(0 0 0 / 8%);
+    border-radius: 10px;
+}
+
+.listings .card-rightbar {
+    background: #FFFFFF;
+    /*border: 1px solid rgba(0,0,0,.125);*/
+    box-shadow: 3px 3px 8px rgb(0 0 0 / 8%), -3px -3px 8px rgb(0 0 0 / 8%);
+    border-radius: 10px;
+}
+
+.listings .box-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.listings .box-form-horiz {
+    display: flex;
+    justify-content: center;
+}
+.search-result-img {
+    border-radius: 10px !important;
+}
+
+
+/*Checkboxes styles*/
+.form-group .nested_check_in {
+	position: relative;
+    border-color: #000000;
+}
+.form-group .nested_check_in input {
+	position: absolute;
+	height: 100%;
+	cursor: pointer;
+	opacity: 0;
+	z-index: 99;
+    color: red;
+}
+.form-group .nested_check_in label::after {
+	content: "";
+	position: absolute;
+	background: #eee;
+    border: 0.5px solid #b5b5b5;
+	width: 18px;
+	height: 18px;
+	left: -1px;
+	top: 2px;
+}
+.form-group .nested_check_in label::before {
+	position: absolute;
+	content: "";
+	left: 3px;
+	top: 0px;
+	width: 10px;
+	height: 17px;
+	border: solid #000000;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+	z-index: 1;
+	display: none;
+}
+.form-group .nested_check_in label {
+	position: relative;
+	padding-left: 24px;
+	font-size: 17px;
+	color: #000000;
+}
+.form-group .nested_check_in input:checked ~ label::before {
+	opacity: 1;
+	display: block;
+}
+
+.form-group .nested_check_in input:checked ~ label::after {
+	opacity: 0;
+}
+
+.card-rightbar .card_title {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 16px;
+    color: #182128;
+}
+
+.card-rightbar .card_price {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 25px;
+    color: #182128;
+}
+
+.card-rightbar .card_descrip {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+    color: #182128;
+    margin-bottom: 10px;
+}
+
+.card-rightbar .card_date {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 16px;
+    color: #80888F;
+}
+
+.card-rightbar .card_img {
+    display: flex;
+    align-items: center;
+}
+
+.card-sidebar .card_button {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-sidebar .card_button .btnfilter {
+    font-size: 15px;
+    background-color: #00D5D5;
+    font-weight: 500;
+    color: #182128;
+    width: auto;
+    line-height: 30px;
+    border-style: none;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.card-sidebar .card_button .btnfilter:hover {
+    color: #fff;
+    background-color: #029c9c;
+    border-style: none;
+    box-shadow: none;
+}
+
+.card-sidebar .card_button .btnfilter-clean {
+    font-size: 15px;
+    
+    background: transparent;
+    font-weight: 500;
+    color: #de2a35;
+    width: auto;
+    line-height: 30px;
+    border: 2px solid #fee1e2;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.card-sidebar .card_button .btnfilter-clean:hover {
+    color: #de2a35;
+    background-color: rgba(65, 35, 35, 0.1);
+    box-shadow: none;
 }
