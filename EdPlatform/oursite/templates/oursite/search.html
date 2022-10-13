@@ -100,25 +100,27 @@
                 {% for product in list %}
                 <div class="row mb-3">
                     <div class="col-md-12">
-                        <div class="card card-rightbar">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-3 card_img">
-                                        <img class="search-result-img img-fluid" src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}">
-                                    </div>
-                                    <div class="col-md-9  card-body">
-                                        <h4 class="card_title">{{ product.title }}</h4>
+                        <a class="card_link" href="{{ product.get_absolute_url }}">
+                            <div class="card card-rightbar">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-3 card_img">
+                                            <img class="search-result-img img-fluid" src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}">
+                                        </div>
+                                        <div class="col-md-9  card-body">
+                                            <h4 class="card_title">{{ product.title }}</h4>
 
-                                        <span class="card_price">{{ product.price.normalize|intcomma }} ₽</span>
-                                        
-                                        <p class="card_descrip">
-                                            {{ product.overview }}
-                                        </p>
-                                        <span class="card_date">Yesterday 10:00 PM</span>
+                                            <span class="card_price">{{ product.price.normalize|intcomma }} ₽</span>
+                                            
+                                            <p class="card_descrip">
+                                                {{ product.overview }}
+                                            </p>
+                                            <span class="card_date">Yesterday 10:00 PM</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 {% endfor %}

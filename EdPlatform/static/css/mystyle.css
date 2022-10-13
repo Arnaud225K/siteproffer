@@ -8,6 +8,14 @@ body {
     background-color: #EFF8FA;
 }
 
+a {
+    text-decoration: none;
+
+}
+a:hover{
+    text-decoration: none;
+}
+
 header {
     height: 130px;
     width: 100%;
