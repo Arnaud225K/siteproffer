@@ -3,9 +3,17 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+html {
+    height: 100%;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #EFF8FA;
+    min-height: 100%;
+    position: relative;
+    margin: 0;
+    padding-bottom: 160px;
 }
 
 a {
@@ -156,6 +164,8 @@ header {
     color: #182128;
     margin-left: 15px;
 }
+
+
 
 
 
@@ -534,7 +544,7 @@ section {
     padding: 5px;
     font-style: normal;
     font-weight: 500;
-    font-size: 22px;
+    font-size:17px !important;
     color: #818a91;
     line-height: 20px;
 }
@@ -650,8 +660,9 @@ a>.block {
     font-style: normal;
     font-weight: 600;
     color: #182128;
-    font-size: 34px;
+    font-size: 30px !important;
     padding: 5px;
+    margin-bottom: 0px;
 }
 
 
@@ -964,7 +975,11 @@ a>.block-similar {
     background-color: #182128;
     width: 100%;
     margin-top: 20px;
-    position: sticky;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /*position: sticky;*/
 }
 
 .footer-content {
@@ -1227,11 +1242,22 @@ a>.block-similar {
 .wish-profile-icon {
         position: absolute;
         right: 10px;
-        bottom: 10px;
+        bottom: 5px;
         z-index: 99;
         font-size: 1.5rem;
         color: #abb0b8;
 }
+
+.wish-profile-favoris-icon {
+    position: absolute;
+    cursor: pointer;
+    right: 10px;
+    top: 10px;
+    z-index: 99;
+    font-size: 1.5rem;
+    color: #abb0b8;
+}
+
     
     
 .block-profile:after,
@@ -1325,21 +1351,21 @@ a>.block-profile{
 }
 
 .heading-profile {
-    margin: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
     text-transform: none;
     font-style: normal;
     font-weight: 600;
     color: #182128;
-    font-size: 34px;
-    /*padding: 5px;*/
+    font-size: 20px !important;
     line-height: 15px;
 }
 
 .product-profile-description {
-    margin: 5px;
+    margin: 5px 0px;
     font-style: normal;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 15px !important;
     color: #818a91;
     line-height: 20px;
     }
@@ -2186,3 +2212,22 @@ a>.block-profile{
     background-color: rgba(65, 35, 35, 0.1);
     box-shadow: none;
 }
+
+
+
+/*Don't show on the desktop version*/
+
+@media (min-width: 768px) {
+    #dpMobile .list_mobile {
+        display: none;
+    }
+
+    #dpmenu-bottom {
+        display: none;
+    }
+
+    #mobile-header-display {
+        display: none;
+    }
+}
+

@@ -30,6 +30,7 @@
     <link rel="shortcut icon" type="image/png" href="{% static 'images/profavicon-16x16.png' %}"/>
 
     <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/stylemobile.css' %}">
    <!-- <link rel="stylesheet" href="{% static 'css/profile.css' %}">-->
 </head>
 
@@ -117,6 +118,8 @@
                     </div>
                 </form>
 
+
+
             </div>
 
             <div class="headerBtnAddItem">
@@ -155,8 +158,30 @@
                 {% endif %}
             </ul>
         </div>
-
     </header>
+
+            <!--Header mobile display-->
+
+            <div id="mobile-header-display">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-sm-3">
+                            <form class="form-inline m-auto">
+                                <div class="search-box input-group mb-3 mt-3">
+                                    <div class="input-group-prepend">
+                                        <button class="btn btn-outline-secondary" type="button"><i class="fa fa-search"></i></button>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary" type="button"><i class="fa-solid fa-sliders"></i></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
 
 
     <div class="homeContainer">
@@ -212,7 +237,31 @@
                     </div>
                 </div>
             </footer>
+
+            <!-- Footer for mobile -->
+            <div id="dpmenu-bottom">
+                <nav class="navbar navbar-expand navbar-dark text-white fixed-bottom">
+                    <ul class="navbar-nav nav-justified w-100">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link"><i class="fa fa-search"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link"><i class="fa-regular fa-heart"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link"><i class="fa-solid fa-plus"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link"><i class="fa-regular fa-comment"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link"><i class="fa-regular fa-user"></i></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
     </section>
+    
 
 
 
